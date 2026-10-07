@@ -1,6 +1,6 @@
 # Firmware and features
 
-This describes what the finished unit does and how its behavior is organized, a spec to build from, not a pasted source file (every builder's exact pin choices and library versions will differ enough that a literal code dump would need rewriting anyway).
+This describes what the finished unit does and how its behavior is organized. The actual sketch for the two-knob unit is in [firmware/](../firmware/README.md). Treat it as a working example to adapt: your pin choices and library versions may differ.
 
 ## Core interaction model (single-encoder unit)
 
@@ -33,4 +33,4 @@ Worth building in from the start rather than adding later: the DFPlayer module c
 
 ## WiFi credentials
 
-Keep these out of source control. Use a separate, untracked config file (or your IDE/build system's standard secrets mechanism) for SSID and password rather than hardcoding them in a file that gets committed.
+Keep these out of source control. The sketch in this repo ships with placeholders where the network name and password go. Fill them in on your own copy and do not commit that copy.
