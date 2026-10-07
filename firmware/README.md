@@ -1,12 +1,13 @@
 # Firmware
 
-The real code running on the finished unit.
+The real code running on the two finished units.
 
 | Sketch | For | Controls |
 |---|---|---|
 | [spider/spider.ino](spider/spider.ino) | The two-knob unit ("Spider") | Two rotary encoders, a lock switch and a shuffle switch |
+| [octopus/octopus.ino](octopus/octopus.ino) | The one-knob unit ("Octopus") | One rotary encoder: turn to change, short click to play or pause, hold to move between volume, track, EQ and shuffle |
 
-The one-knob version used on the second unit is described in [docs/firmware-and-features.md](../docs/firmware-and-features.md). Its source was not kept, so it is not here yet.
+Both use the same libraries, the same settings and the same OLED and DFPlayer pins. Octopus only uses Knob 1 from the pin table and has no switches.
 
 ## Before uploading
 
@@ -38,13 +39,20 @@ Near the top of the sketch, replace `YOUR_WIFI_NAME` and `YOUR_WIFI_PASSWORD` wi
 | Lock switch | outer pin | 13 (centre pin to ground) |
 | Shuffle switch | outer pin | 14 (centre pin to ground) |
 
-## What it does
+## What Spider does
 
 - Remembers track, volume, EQ and play state across power cycles
 - Waits for the DFPlayer at power-up and retries, so there is no reset button to press
 - Looks for home WiFi for 4 seconds at start. If found: sets the clock, serves a small status page, and accepts wireless updates under the name `spider-mp3`. If not found, or after 30 seconds away from home, it switches WiFi off to save battery
 - After 5 seconds without input, shows a screensaver: a name card, then a flying-kick figure sliding across. The first touch only wakes the screen
 
+## What Octopus does differently
+
+- One knob does everything. A `>` on the screen marks what turning the knob changes right now. Holding the knob for 0.6 seconds moves to the next one: volume, track, EQ, shuffle
+- Shuffle is a menu item instead of a switch, and it is remembered across power cycles
+- Its screensaver types out a short text, then shows a guitar with notes flying off it. The text is `ssText` near the top of the sketch
+- Wireless updates use the name `octopus-mp3`
+
 ## Making it yours
 
-The screensaver text is in `showName()` and the picture is the `kickPic` array, a 60 by 46 pixel one-colour bitmap. Swap in your own.
+In Spider, the screensaver text is in `showName()` and the picture is the `kickPic` array, a 60 by 46 pixel one-colour bitmap. Swap in your own.

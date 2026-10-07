@@ -14,7 +14,7 @@ All WiFi credentials, personal emails and other identifying details have been re
 | [docs/wiring.md](docs/wiring.md) | Pin assignments and the power chain, including a batch-wide hardware gotcha that will save you hours |
 | [docs/firmware-and-features.md](docs/firmware-and-features.md) | What the finished unit actually does, and the build order that avoids the worst bugs |
 | [docs/lessons-learned.md](docs/lessons-learned.md) | Every real failure hit along the way and how it was diagnosed, the most useful page in this repo |
-| [firmware/](firmware/README.md) | The real code running on the finished two-knob unit, with settings, libraries and pin table |
+| [firmware/](firmware/README.md) | The real code running on both finished units (two-knob and one-knob), with settings, libraries and pin table |
 | [photos/](photos/README.md) | Pictures of the real builds |
 
 ## Rough signal/power chain

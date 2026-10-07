@@ -1,6 +1,6 @@
 # Firmware and features
 
-This describes what the finished unit does and how its behavior is organized. The actual sketch for the two-knob unit is in [firmware/](../firmware/README.md). Treat it as a working example to adapt: your pin choices and library versions may differ.
+This describes what the finished unit does and how its behavior is organized. The actual sketches for the two-knob and one-knob units are in [firmware/](../firmware/README.md). Treat it as a working example to adapt: your pin choices and library versions may differ.
 
 ## Core interaction model (single-encoder unit)
 
